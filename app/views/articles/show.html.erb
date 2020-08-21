@@ -1,0 +1,21 @@
+<h2>Is this the specific article you are looking for?</h2>
+
+<h2> <%= @article.title %> </h2>
+<p> %= @article.content %> </p>
+
+<div>
+<%= link_to "Delete the article: #{@article.title}?",
+            article_path(@article),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+</div>
+<br>
+<div>
+<%= link_to "Edit the article: #{@article.title}?", edit_article_path(@article) %>
+</div>
+
+<!-- Normal HTML command:
+<a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/article/2">
+  Delete the article
+</a>
+ -->
